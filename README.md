@@ -6,39 +6,41 @@ See https://openreview.net/forum?id=B1e-kxSKDH for further information.
 ## Example Animations
 ### Video Prediction
 <div>
-    <table width="610" border="0px">
+    <table width="710" border="0px">
       <tr>
         <th width="100">Real</th>
         <th width="100">Ours</th>
         <th width="100">VRNN</th>
         <th width="100">SQAIR</th>
+        <th width="100">DDPAE</th>
         <th width="100">Linear</th>
         <th width="100">Supervised</th>
       </tr>
     </table>
-    <img height="100" width="610" src="/figures/comparison_grid_billiards.gif">
+    <img height="100" width="710" src="/figures/comparison_grid_billiards.gif">
 </div>
 
 
 <div>
-    <table width="610" border="0px">
+    <table width="710" border="0px">
       <tr>
         <th width="100">Real</th>
         <th width="100">Ours</th>
         <th width="100">VRNN</th>
         <th width="100">SQAIR</th>
+        <th width="100">DDPAE</th>
         <th width="100">Linear</th>
         <th width="100">Supervised</th>
       </tr>
     </table>
-    <img height="100" width="610" src="/figures/comparison_grid_gravity.gif">
+    <img height="100" width="710" src="/figures/comparison_grid_gravity.gif">
 </div>
 
 
 The above depicts the reconstruction and prediction errors of the various models.
 The models are given 8 frames of video as input, which they reconstruct. Conditioned on this 
 input, all models predict the following 92 frames.
--Only STOVE manages to generate visually convincing physically behavior over longer timeframes.
+Only STOVE manages to generate visually convincing physically behavior over longer timeframes.
 10 different sequences of length 100 are shown.
 
 ### Model-Based Control
@@ -83,6 +85,14 @@ supervised approach.
 Finally, we demonstrate the strength of our model as a simulator for
 sample efficient model-based reinforcement learning in tasks with
 heavily interacting objects.
+
+## Other animations
+<img height="100" width="100" src="/figures/long_rollout.gif">
+Stove rollout is stable for possibly infinite amount of timesteps.
+(Shown are 2000 frames of rollout and we tested up to 100000.)
+<img height="100" width="100" src="/figures/multiball_billiards.gif">
+All components of STOVE scale well to videos with larger number of objects!
+
 
 ## Data
 Run `run_scripts.py --create-data` to generate billiards and gravity data.
